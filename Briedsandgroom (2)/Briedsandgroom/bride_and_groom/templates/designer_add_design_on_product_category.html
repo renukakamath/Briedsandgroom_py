@@ -1,0 +1,145 @@
+{% include 'designer_header.html' %}
+
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: white;
+
+		}
+		tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+		th
+		{
+			color: black;
+
+		}
+		thead{
+			background-color: grey;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b2.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+                        	
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+        
+
+
+	<center>
+		<h1>ADD DESIGN</h1>
+
+		<table class="table" style="width: 500px;">
+
+			<tr>
+
+			<th>Category</th>
+			
+			<td><select name="cat_id" class="form-control">
+
+				{% for row in data['categories'] %}
+
+				<option value="{{ row['category_id']}}">{{ row ['category_name' ]}}</option>
+
+				{% endfor %}
+
+			</select></td>
+
+			</tr>
+			<tr>
+				<th>design name</th>
+				<td><input type="text" class="form-control" required="" name="dname"></td>
+			</tr>
+			<tr>
+				<th>model</th>
+				<td><input type="text" class="form-control" required="" name="model"></td>
+			</tr>
+			<tr>
+				<th>material</th>
+				<td><input type="text" class="form-control" required="" name="material"></td>
+			</tr>
+			<tr>
+				<th>details</th>
+				<td><textarea name="details" class="form-control"  required="" ></textarea></td>
+			</tr>
+			<tr>
+				<th>photo</th>
+				<th><input type="file" class="form-control" name="photo"  required=""></th>
+			</tr>
+			<tr>
+				<th>price</th>
+				<td><input type="text" class="form-control" name="price"  required=""></td>
+			</tr>
+			<tr>
+				<th>made stock</th>
+				<td><input type="text" class="form-control" name="stock"  required=""></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" class="btn btn-warning" name="submit" value="add"></td>
+			</tr>
+		</table>
+
+		<h1>VIEW DESIGNS</h1>
+
+		<table class="table">
+			<thead>
+			<tr>
+				<th>sno</th>
+				<th>design name</th>
+				<th>model</th>
+				<th>material</th>
+				<th>details</th>
+				<th>photo</th>
+				<th>price</th>
+				<th>made stock</th>
+				<th>delete</th>
+			</tr>
+			</thead>
+
+			{% for row in data['designs'] %}
+
+			<tr id="bg">
+				<td>{{ loop.index }}</td>
+				<td>{{ row['design_name'] }}</td>
+				<td>{{ row['model'] }}</td>
+				<td>{{ row['material'] }}</td>
+				<td>{{ row['details'] }}</td>
+				<td><img src="/{{ row['photo'] }}" width="100" height="100"></td>
+				<td>{{ row['price'] }}</td>
+				<td>{{ row['made_stock'] }}</td>
+				<td><a href="?action=delete&id={{ row['design_id'] }}" class="btn btn-danger">delete</a></td>
+			</tr>
+
+			{% endfor %}
+
+		</table>
+		
+	</center>
+
+	                </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+	
+</form>
+
+{% include 'footer.html' %}

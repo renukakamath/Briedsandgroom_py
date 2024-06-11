@@ -1,0 +1,44 @@
+{% include 'designer_header.html' %}
+
+<form method="post">
+
+		<style type="text/css">
+		th
+		{
+			color: white
+		}
+		td
+		{
+			color: white
+		}
+	</style>
+
+	<center>
+		<h1>PAYMENTS</h1>
+
+		<table class="table">
+			<tr>
+				<th>sno</th>
+				
+				<th>design name</th>
+				<th>amount</th>
+				<th>time</th>
+			</tr>
+
+			{% for row in data['payments'] %}
+ 
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row['design_name'] }}</td>
+				<td>{{ row['price'] }}</td>
+				<td>{{ row['date_time'] }}</td>
+			</tr>
+
+			{% endfor %}
+
+		</table>
+	</center>
+	
+</form>
+
+{% include 'footer.html' %}

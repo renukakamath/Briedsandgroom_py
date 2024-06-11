@@ -1,0 +1,97 @@
+{% include 'admin_header.html' %}
+
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: black;
+
+		}
+		 tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b1.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+                        	
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+            
+
+	<center>
+		<h1>MANAGE DESIGNERS</h1>
+
+		<table class="table">
+			<thead>
+
+			<tr>
+				<th>d id</th>
+				<th>designer name</th>
+				<th>place</th>
+				<th>landmark</th>
+				<th>pincode</th>
+				<th>phone</th>
+				<th>email</th>
+				<th>status</th>
+				<th>accept/reject</th>
+			</tr>
+			</thead>
+
+
+			{% for row in data['designers'] %}
+
+			<tr>
+				<td>{{ row['designer_id'] }}</td>
+				<td>{{ row['designer_name'] }}</td>
+				<td>{{ row['place'] }}</td>
+				<td>{{ row['landmark'] }}</td>
+				<td>{{ row['pincode'] }}</td>
+				<td>{{ row['phone'] }}</td>
+				<td>{{ row['email'] }}</td>
+				<td>{{ row['status'] }}</td>
+
+				{% if row['status']=='approved' %}
+
+				<td><a href="?action=reject&id={{ row['login_id'] }}" class="btn btn-danger">reject</a></td>
+			</tr>
+
+
+				{% else %}
+
+				<td><a href="?action=accept&id={{ row['login_id'] }}" class="btn btn-success">accept</a></td>
+
+				{% endif %}
+
+				
+
+			{% endfor %}
+
+
+		</table>
+	</center>
+	            </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+	
+</form>
+
+{% include 'footer.html' %}

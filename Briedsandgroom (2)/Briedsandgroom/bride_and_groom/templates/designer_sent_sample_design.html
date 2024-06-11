@@ -1,0 +1,130 @@
+{% include 'designer_header.html' %}
+
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: white;
+
+		}
+		tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+		th
+		{
+			color: black;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b4.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+
+
+                        
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+               
+<center>
+	<h1>SAMPLE DESIGN</h1>
+	<table class="table">
+		<tr>
+			<th>details</th>
+			<td><textarea name="details" class="form-control"></textarea></td>
+		</tr>
+		<tr>
+			<th>material</th>
+			<td><input type="text" class="form-control" name="material"></td>
+		</tr>
+		<tr>
+			<th>price</th>
+			<td><input type="text" class="form-control" name="price"></td>
+		</tr>
+		<tr>
+			<th>image</th>
+			<td><input type="file" class="form-control" name="image"></td>
+		</tr>
+		
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" class="btn btn-warning"></td>
+		</tr>
+	</table>
+
+	<h1>VIEW SAMPLE</h1>
+
+	<table class="table">
+		<tr>
+			<th>details</th>
+			<th>material</th>
+			<th>price</th>
+			<th>image</th>
+			<th>date</th>
+			
+			<th>status</th>
+			
+		</tr>
+
+		{% for row in data['custom'] %}
+
+		<tr>
+			<td>{{ row['details'] }}</td>
+			<td>{{ row['material'] }}</td>
+			<td>{{ row['price'] }}</td>
+			<td><img src="/{{ row['image'] }}" width="100" height="100"></td>
+			<td>{{ row['date_time'] }}</td>
+			<td>{{ row['status'] }}</td>
+
+			{% if row['status']=='paid' %}
+
+
+			
+				<td><a href="designer_view_payment?id={{ row['request_id'] }}" class="btn btn-danger">payment</a></td>
+		
+
+				
+
+					
+
+			
+
+					<td><a href="?action=deliver&ids={{ row['delivery_id'] }}&id={{ row['request_id'] }}" class="btn 	btn-primary">deliver</a></td>
+
+					
+
+
+
+			{% endif %}
+
+		</tr>
+
+			
+
+		{% endfor %}
+
+	</table>
+</center>
+
+         </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+	
+</form>
+
+{% include 'footer.html' %}

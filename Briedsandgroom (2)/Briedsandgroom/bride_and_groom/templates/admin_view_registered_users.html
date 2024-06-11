@@ -1,0 +1,95 @@
+{% include 'admin_header.html' %}
+
+<form method="post">
+
+
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: white;
+
+		}
+		tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+
+		th
+		{
+			color: black;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b2.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+       
+
+	<center>
+		<h1>REGISTERED USERS</h1>
+		<table class="table">
+			<tr>
+				<th>sno</th>
+				<th>first name</th>
+				<th>last name</th>
+				<th>house name</th>
+				<th>place</th>
+				<th>landmark</th>
+				<th>pincode</th>
+				<th>phone</th>
+				<th>email</th>
+			</tr>
+
+			{% for row in data['users'] %}
+
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row['first_name'] }}</td>
+				<td>{{ row['last_name'] }}</td>
+				<td>{{ row['house_name'] }}</td>
+				<td>{{ row['place'] }}</td>
+				<td>{{ row['landmark'] }}</td>
+				<td>{{ row['pincode'] }}</td>
+				<td>{{ row['phone'] }}</td>
+				<td>{{ row['email'] }}</td>
+			</tr>
+
+			{% endfor %}
+
+		</table>
+
+		<br>
+<br>
+<br>
+<br>
+
+
+
+		
+	</center>
+
+	                 </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</form>
+
+{% include 'footer.html' %}

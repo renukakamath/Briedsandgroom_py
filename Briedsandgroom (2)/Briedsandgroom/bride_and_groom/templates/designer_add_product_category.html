@@ -1,0 +1,120 @@
+{% include 'designer_header.html' %}
+
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: white;
+
+		}
+		#bg tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b3.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+                      
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+           
+	<center>
+		<h1  >ADD PRODUCT CATEGORY</h1>
+
+		<table class="table" style="width: 500px;">
+			<tr>
+				<th>category name</th>
+				<td><input type="text" name="catname" class="form-control"  required=""></td>
+			</tr>
+			<tr>
+				<th>descripton</th>
+				<td><textarea name="des" class="form-control"  required="" ></textarea></td>
+			</tr>
+			<tr>
+				<td align="right" colspan="2"><input type="submit" name="submit" class="btn btn-warning" value="add"></td>
+			</tr>
+		</table>
+
+			<h1>VIEW CATEGORY</h1>
+
+		<table class="table" style="width: 700px;scroll-behavior: auto;">
+			<thead>
+			<tr>
+				<th>sno</th>
+				<th>category name</th>
+				<th>description</th>
+				<th>delete</th>
+			</tr>
+			</thead>
+
+			{% for row in data['cat'] %}
+			<tbody  id="bg">
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row['category_name'] }}</td>
+				<td>{{ row['description'] }}</td>
+				<td><a href="?action=delete&id={{ row['category_id'] }}" class="btn btn-danger">delete</a></td>
+			</tr>
+			</tbody>
+
+			{% endfor %}
+			
+		</table>
+
+
+
+		
+	</center>
+
+	             </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+<!-- <center>
+	<div style="background-image: url(/static/images/bann2.jpg); height: 600px;position: relative;">
+    		<h1>VIEW CATEGORY</h1>
+
+		<table class="table" style="width: 700px;">
+			<tr>
+				<th>sno</th>
+				<th>category name</th>
+				<th>description</th>
+				<th>delete</th>
+			</tr>
+
+			{% for row in data['cat'] %}
+
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row['category_name'] }}</td>
+				<td>{{ row['description'] }}</td>
+				<td><a href="?action=delete&id={{ row['category_id'] }}" class="btn btn-danger">delete</a></td>
+			</tr>
+
+			{% endfor %}
+			
+		</table>
+		</div>
+</center>
+	
+</form> -->
+
+{% include 'footer.html' %}

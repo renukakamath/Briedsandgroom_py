@@ -1,0 +1,78 @@
+{% include 'admin_header.html' %}
+<form method="post">
+
+		<style type="text/css">
+		table,h1
+		{
+			color: white;
+
+		}
+		#bg tr:hover{
+			background-color: rgb(191,191,191,0.7);
+
+
+		}
+		thead{
+			background-color: grey;
+		}
+	</style>
+
+	<div class="callbacks_container" style=" background-attachment: fixed;">
+            <ul class="rslides" id="slider3" style="  background-attachment: fixed; " >
+                <li class="banner1" style="  background-attachment: fixed; background-image: url(/static/images/b1.jpg);">
+                    <div class="container" style="  background-attachment: fixed;">
+                        <div class="slider-info-wthree" style="  background-attachment: fixed;">
+                        	
+                            <!-- <h4 style="color:white;">Easily plan your wedding!</h4>
+                            <p>Everything you need to know about this bridal accessory!</p>
+                            <a href="login" class="bnr-button">log in here</a> -->
+                
+	<center>
+		<h1>DESIGN</h1>
+
+		<table class="table">
+			<tr>
+				<th>s no</th>
+				<th>design name</th>
+				<th>model</th>
+				<th>materials</th>
+				<th>details</th>
+				<th>photo</th>
+				<th>price</th>
+				<th>made stock</th>
+			</tr>
+			
+			{% for row in data['designs'] %}
+
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row['design_name'] }}</td>
+				<td>{{ row['model'] }}</td>
+				<td>{{ row['material'] }}</td>
+				<td>{{ row['details'] }}</td>
+				<td><img src="/{{ row['photo'] }}" width="100" height="100"></td>
+				<td>{{ row['price'] }}</td>
+				<td>{{ row['made_stock'] }}</td>
+			</tr>
+
+			{% endfor %}
+
+		</table>
+
+		
+	</center>
+	        </div>
+                    </div>
+                </li>
+               
+
+            </ul>
+
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+	
+</form>
+
+{% include 'footer.html' %}

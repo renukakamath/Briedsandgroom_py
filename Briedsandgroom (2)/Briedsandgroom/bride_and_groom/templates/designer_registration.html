@@ -1,0 +1,89 @@
+{% include 'home_header.html' %}
+
+
+<style type="text/css">
+	
+	h1,th
+	{
+		color: #fff;
+	}
+	tr:hover
+	{
+            background-color: rgb(191,191,191,0.7);
+    }
+
+</style>
+
+
+<div class="callbacks_container" style="height: 1000px;">
+            <ul class="rslides" id="slider3" style="height: 1000px;">
+           
+                <li class="banner2" style="  background-attachment: fixed; background-image: url(/static/images/b3.jpg);">
+                    <div class="container" style="height: 1000px;">
+                        <div class="slider-info-wthree" style="height: 1000px;">
+                            <form method="post">
+								<center>
+									<h1>DESIGNER REGISTRATION</h1><br><br>
+									<table align="center" class="table" style="width: 500px;font-size: 26px;">
+										<tr>
+											<th>designer name</th>
+											<td><input type="text" required="" name="dname" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>place</th>
+											<td><input type="text" required="" name="place" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>landmark</th>
+											<td><input type="text" required="" name="landmark" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>pincode</th>
+											<td><input type="text" required="" name="pin" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>phone</th>
+											<td><input type="text" required="" name="phone" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>email</th>
+											<td><input type="email" required="" name="email" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>username</th>
+											<td><input type="text" required="" name="uname" class="form-control"></td>
+										</tr>
+										<tr>
+											<th>password</th>
+											<td><input type="password" required="" name="pword" class="form-control"></td>
+										</tr>
+										<tr>
+											<td colspan="2" align="center"><input type="submit" name="submit" value="Register" class="btn btn-success"></td>
+										</tr>
+									</table>
+								</center>
+							</form>
+
+                        </div>
+                    </div>
+                </li>
+                <!-- <li class="banner3" style="height: 450px;">
+                    <div class="container" style="height: 450px;">
+                        <div class="slider-info-wthree" style="height: 450px;">
+                            <h4 style="color:white;">Everything you need in one place</h4>
+                            <p>our store carry more than 1000 brands!</p>
+                            <a href="designer_registration" class="bnr-button">Register here</a>
+                        </div>
+                    </div>
+                </li> -->
+
+            </ul>
+
+        </div>
+        <!--</div>-->
+        <div class="clearfix" style="height: 450px;"></div>
+    </div>
+
+
+
+{% include 'footer.html' %}
